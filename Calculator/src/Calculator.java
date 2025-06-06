@@ -112,5 +112,28 @@ public class Calculator implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
+        // Handle button clicks
+        for (int i = 0; i < 10; i++) {
+            if (e.getSource() == numberButtons[i]) {
+                textField.setText(textField.getText().concat(String.valueOf(i)));
+            }
+        }
+
+        // Handle Decimal button
+        if (e.getSource() == decButton) {
+            textField.setText(textField.getText().concat("."));
+        }
+
+        // Handle Operator buttons
+        if (e.getSource() == addButton) {
+            num1 = Double.parseDouble(textField.getText());
+            operator = '+';
+            textField.setText("");
+        }
+        if (e.getSource() == subButton) {
+            num1 = Double.parseDouble(textField.getText());
+            operator = '-';
+            textField.setText("");
+        }
     }
 }
