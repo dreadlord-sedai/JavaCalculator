@@ -22,6 +22,19 @@ public class Calculator implements ActionListener {
         frame = new JFrame("Calculator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(420, 550);
+        frame.setLayout(null);
+        frame.setResizable(false);
+        frame.setLocationRelativeTo(null);
+
+        textField = new JTextField();
+        textField.setBounds(50, 25, 300, 50);
+        textField.setFont(myFont);
+        textField.setEditable(false);
+
+
+
+        frame.add(textField);
+        frame.setVisible(true);
     }
 
     public static void main(String[] args) {
