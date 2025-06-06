@@ -2,8 +2,12 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
+import com.formdev.flatlaf.FlatLightLaf;
+import com.formdev.flatlaf.themes.FlatMacDarkLaf;
 
 public class Calculator implements ActionListener {
+
+
 
     JFrame frame;
     JTextField textField;
@@ -19,12 +23,19 @@ public class Calculator implements ActionListener {
 
     Calculator() {
 
+
+        // Set FlatLaf Look and Feel
+        try {
+            UIManager.setLookAndFeel(new FlatMacDarkLaf());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         // Initialize the frame
         frame = new JFrame("Calculator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(420, 550);
         frame.setLayout(null);
-        frame.setResizable(false);
         frame.setLocationRelativeTo(null);
 
         // Create a panel
